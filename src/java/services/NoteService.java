@@ -25,9 +25,7 @@ public class NoteService {
     public int update(int noteId, String content) throws Exception {
         Note note = get(noteId);
         Date date = Calendar.getInstance().getTime();
-        //DateFormat dateformat = new SimpleDateFormat("yyyy-mm-dd");
-        //String notedate = dateformat.format(date);
-        
+
         note.setContent(content);
         note.setDateCreated(date);
         
@@ -41,7 +39,7 @@ public class NoteService {
     
     public int insert(String content) throws Exception {
         Date date = Calendar.getInstance().getTime();
-        ;
+        
         Note note = new Note(0, date, content);
 
         return noteDB.insert(note);
