@@ -64,20 +64,14 @@ public class NotesDB {
 
     public Note getNote(int noteId) throws NotesDBException, ParseException {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
-        EntityTransaction trans = em.getTransaction();
+     
 
         try {
 
-            trans.begin();
-            em.merge(note);
-            trans.commit();
-            trans.rollback();
-            em.close();
+         Note note = em.find(Note.class, noteId);
+         return note;
 
-        } catch (Exception ex) {
-            trans.rollback();
-
-        } finally {
+        }  finally {
             em.close();
         }
 

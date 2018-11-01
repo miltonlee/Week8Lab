@@ -1,8 +1,3 @@
-<%-- 
-    Document   : notes
-    Created on : Oct 24, 2018, 11:13:01 AM
-    Author     : 743953
---%>
 
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -29,7 +24,7 @@
                 <tr>
                     <th>${note.noteId}</th>
                     <th>${note.dateCreated}</th>
-                    <th>${note.contents}</th>
+                    <th>${note.content}</th>
                     <th>
                         <form method="post" action="notes?action=delete">
                             <input type="submit" value="Delete"/>  
@@ -58,7 +53,7 @@
     <c:if test="${selectednotetoedit != null}">
         <form method="post" action="notes?action=edit">
             <input type="hidden" name="hiddennote" value="${selectednotetoedit.noteId}"/>
-            <textarea cols="40" rows="15" name="content">${selectednotetoedit.contents}</textarea>
+            <textarea cols="40" rows="15" name="content">${selectednotetoedit.content}</textarea>
             <input type="submit" value="Add"/>
         </form>
     </c:if>

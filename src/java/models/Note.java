@@ -49,6 +49,13 @@ public class Note implements Serializable {
     public Note() {
     }
 
+    public Note(Integer noteId, Date dateCreated, String content) {
+        this.noteId = noteId;
+        this.dateCreated = dateCreated;
+        this.content = content;
+    }
+    
+
     public Note(Integer noteId) {
         this.noteId = noteId;
     }
